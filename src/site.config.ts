@@ -1,5 +1,3 @@
-import { withBase } from "./utils/helpers";
-
 export type Image = {
     src: string;
     alt?: string;
@@ -68,7 +66,7 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://latihan-astro-2.pages.dev', // Diubah agar sesuai domain Anda
     title: 'Beol di Bulan',
     description: 'A minimal space-inspired personal blog template built with Astro.js and Tailwind CSS, by Siddhesh Thadeshwar',
     image: {
@@ -78,41 +76,41 @@ const siteConfig: SiteConfig = {
     headerNavLinks: [
         {
             text: 'Home',
-            href: withBase('/')
+            href: '/'
         },
         {
             text: 'Blog',
-            href: withBase('/blog')
+            href: '/blog'
         },
         {
             text: 'Tags',
-            href: withBase('/tags')
+            href: '/tags'
         },
         {
             text: 'About',
-            href: withBase('/about')
+            href: '/about'
         },
         {
             text: 'Contact',
-            href: withBase('/contact')
+            href: '/contact'
         }
     ],
     footerNavLinks: [
         {
             text: 'About',
-            href: withBase('/about')
+            href: '/about'
         },
         {
             text: 'Contact',
-            href: withBase('/contact')
+            href: '/contact'
         },
         {
             text: 'RSS Feed',
-            href: withBase('/rss.xml')
+            href: '/rss.xml'
         },
-                {
+        {
             text: 'Sitemap',
-            href: withBase('/sitemap-index.xml')
+            href: '/sitemap-index.xml'
         }
     ],
     socialLinks: [
@@ -140,7 +138,7 @@ const siteConfig: SiteConfig = {
         actions: [
             {
                 text: 'Read Now',
-                href: withBase('/blog')
+                href: '/blog'
             },
             {
                 text: 'Subscribe',

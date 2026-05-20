@@ -1,5 +1,5 @@
 ---
-title: "First Adventure on Mars"
+title: "Tips Mengatasi Horny di Luar Agkasa"
 description: "This is the first post of my new blog."
 author: "Astro-naut Sid"
 image:
@@ -10,7 +10,7 @@ tags:
   ["astro", "blogging", "space", "space travel", "space exploration", "mars"]
 ---
 
-Welcome to my _new blog_ about space exploration! Here, I will share my learning journey about the universe around us.
+Selamat datang di Blog ku. Blog ini membahas hal-hal tabu terkait luar angkasa. Hal yang NASA sekalipun menghindar untuk membicarakanya. Jangan kaget jika kamu akan menamukan banyak informasi yang mindblowing, yang gak pernah kamu dapatkan di tempat lain..
 
 ## What I've accomplished
 

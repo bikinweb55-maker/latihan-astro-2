@@ -1,5 +1,5 @@
 ---
-title: "Aim for the Stars, land between the moons, or follow the meteor?"
+title: "Mengamati Sarkem dari Luar Angkasa"
 author: "Astro-naut Sid"
 description: "I had some challenges, but the community helped!"
 image:

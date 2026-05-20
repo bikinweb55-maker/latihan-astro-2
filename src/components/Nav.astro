@@ -4,13 +4,12 @@ import Hamburger from "./Hamburger.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 import SiteIdentity from "./SiteIdentity.astro";
 import NavLinks from "./NavLinks.astro";
-import { withBase } from "../utils/helpers";
 const { activePage } = Astro.props;
 ---
 
 <header>
   <nav class="font-light w-full">
-    <a href={withBase("/")}><SiteIdentity /></a>
+    <a href="/"><SiteIdentity /></a>
     <div class="hidden sm:flex sm:gap-8">
       {(<NavLinks activePage={activePage} links={siteConfig.headerNavLinks} />)}
     </div>
@@ -29,20 +28,33 @@ const { activePage } = Astro.props;
     />
   </div>
 </header>
-<script is:inline>
-  document.querySelector("#hamburger-menu").addEventListener("click", () => {
-    console.log("clicked...");
-    document.querySelector("#mobile-links").classList.remove("slideOutUp");
-    document.querySelector("#mobile-links").classList.add("expanded");
-    document.querySelector("#mobile-links").classList.add("slideInDown");
-  });
 
-  document.querySelector(".close-menu").addEventListener("click", () => {
-    console.log("clicked...");
-    document.querySelector("#mobile-links").classList.add("slideOutUp");
-    document.querySelector("#mobile-links").classList.add("expanded");
-    document.querySelector("#mobile-links").classList.remove("slideInDown");
-  });
+<script>
+  function setupNavigation() {
+    const hamburger = document.querySelector("#hamburger-menu");
+    const closeMenu = document.querySelector(".close-menu");
+    const mobileLinks = document.querySelector("#mobile-links");
+
+    if (hamburger && mobileLinks) {
+      hamburger.addEventListener("click", () => {
+        mobileLinks.classList.remove("slideOutUp");
+        mobileLinks.classList.add("expanded", "slideInDown");
+      });
+    }
+
+    if (closeMenu && mobileLinks) {
+      closeMenu.addEventListener("click", () => {
+        mobileLinks.classList.add("slideOutUp", "expanded");
+        mobileLinks.classList.remove("slideInDown");
+      });
+    }
+  }
+
+  // Jalankan saat pertama kali halaman dimuat
+  setupNavigation();
+
+  // Jalankan ulang setiap kali Swup selesai memindahkan halaman (Mencegah Menu Macet)
+  document.addEventListener("swup:contentReplaced", setupNavigation);
 </script>
 
 <style>

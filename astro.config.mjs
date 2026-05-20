@@ -7,8 +7,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321", //"https://djsiddz.github.io",
-  base: "/space-ahead",
+  // 1. UBAH KE URL CLOUDFLARE PAGES ANDA (Wajib HTTPS agar tidak dianggap berbahaya)
+  site: "https://latihan-astro-2.pages.dev", 
+  
+  // 2. KOSONGKAN BASE (Ubah dari "/space-ahead" menjadi "/")
+  // Karena di Cloudflare Pages, website Anda berada di root/halaman utama, bukan di dalam folder sub-direktori.
+  base: "/", 
+
   integrations: [
     swup({
       theme: ["overlay", { direction: "to-top" }],
